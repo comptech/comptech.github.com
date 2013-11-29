@@ -1,0 +1,19 @@
+VERSION: 5.1
+COMMENT: Brucite
+JCPDS#: 2-2-2-2
+K0:       39.600
+K0P:       6.70000
+K0PP:     0.0000
+K0T:      0.0000
+K0TT:     0.0000
+SYMMETRY: HEXAGONAL
+A:       0.000
+B:       0.000
+VOLUME:        0.00
+ALPHAT:      00.00E0
+A0:      00.00E0
+A1:      00.00E0
+A2:      0.00
+DIHKL:  4.7700   90.  0  0  1
+DIHKL:  2.7250    6.  1  0  0
+DIHKL:  2.3650  100.  1  0  1

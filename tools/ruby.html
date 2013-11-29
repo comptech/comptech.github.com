@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="COMPRES Technology Office" />
+        <meta name="copyright" content="COMPRES Technology Office" />
+    
+    <script type= "text/javascript">
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = 'https:' == document.location.protocol ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js' : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'; 
+        s[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" + 
+            "    config: ['MMLorHTML.js']," + 
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS','output/NativeMML']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," + 
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax .mo, .MathJax .mi': {color: 'black ! important'}} " +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(s);
+    </script>
+
+
+        <title>Ruby fluorescence pressure calculator  · COMPTECH
+</title>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="../theme/css/comptech.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <header>
+            <div class="logo-area">
+                <a href="..">
+                    <span id="logo"></span>
+                </a>
+                <a href="http://compres.us">
+                    <span id="secondary-logo"></span>
+                </a>
+                <abbr id="call-phone" title="Phone">Argonne, IL</abbr>
+            </div>
+            <nav class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <!-- mobile nav icon (hidden:CSS) -->
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            menu
+                        </a>
+                        <div class="nav-collapse">
+                            <ul class="nav">
+                                <li ><a href="/">Home</a></li>
+                                <li ><a href="/about/">About</a></li>
+                                <li ><a href="/news/">News</a></li>
+                                <li ><a href="/facilities/">Facilities</a></li>
+                                <li  class="active"><a href="/tools/">Tools</a></li>
+                                <li ><a href="/links/">Links</a></li>
+                                <li ><a href="/contact.html">Contact</a></li>
+                                <li><form class="navbar-search" action="../search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section id="main">
+            <div class="body-text">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+<div class="row-fluid">
+    <h1><a href="../tools/ruby.html"> Ruby fluorescence pressure calculator  </a></h1>
+    <h2>Tools</h2>
+<p><fieldset>
+<legend>Ruby fluorescence pressure calculator</legend>
+    <label>Conditions:</label>
+    <select id="ruby_cond" name="ruby_cond" size="1">
+        <option value="hydro">hydrostatic</option>
+        <option value="nonhydro">non-hydrostatic</option>
+    </select>
+    <br />
+    Reference ruby:
+    <input id="ruby_lambda0" class="input-small" name="ruby_lambda0" type="number" value="694.22"> nm, at T=
+    <input id="ruby_reftemp" class="input-small" name="ruby_reftemp" type="number" value="298">(K)
+    <br />
+    Measured ruby:
+    <input id="ruby_lambda" class="input-small" name="ruby_lambda" type="number" value="694.22"> nm, at T=
+    <input id="ruby_temp" class="input-small" name="ruby_temp" type="number" value="298">(K) 
+    <p>
+        <strong>
+            Pressure =  <span id="ruby_pressure">0.0 GPa</span>
+        </strong>
+    </p>
+    <h6>Pressure dependence of ruby shift is from </h6>
+    <i>Mao H.K., Xu J., and Bell P.M. (1986) J. Geophys. Res. 91, 4673</i>
+    <h6> Temperature correction is from</h6>
+    <i>Rekhi S., Dubrovinsky L.S., and Saxena S.K. (1999) High Temp. - High Pres. 31, 299</i>
+</fieldset></p>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+
+<script>
+    /* Ruby Scale */
+    $(document).ready(function(){
+        $('[id^=ruby_]').bind("keyup change", function(){
+            A = 1904;
+            k = 0.46299;
+            l = 0.0060823;
+            m = 0.0000010264;
+            if ($('#ruby_cond').val() == "hydro") {
+                B = 7.665;
+                } else if ($('#ruby_cond').val() == "nonhydro") {
+                    B = 5;
+                }
+                reftemp = parseFloat($('#ruby_reftemp').val());
+                temp = parseFloat($('#ruby_temp').val());
+                lam0 = parseFloat($('#ruby_lambda0').val());
+                lam = parseFloat($('#ruby_lambda').val());
+
+                Acorr = A + k*(temp-reftemp);
+                lam0corr = lam0 + l*(temp-reftemp) + m*((temp-reftemp)*(temp-reftemp));
+                rat = Math.pow(lam/lam0corr, B);
+                P = (Acorr/B)*rat-(Acorr/B);
+                $('#ruby_pressure').text(P.toFixed(2) + " GPa");
+        });
+    }); 
+</script>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+<div class="container-fluid">
+    <div class="row-fluid">
+    	<div class="span9 contact-info">
+    		Address: 9700 S. Cass Ave, Bldg 438E, Argonne IL 60439 | Tel: (1) 630 252-0893
+    	</div>
+    	<div class="span3 contact-info">
+    		Copyright &copy; 2013 COMPRES
+    	</div>
+    </div>
+</div>        </footer>
+            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    </body>
+</html>

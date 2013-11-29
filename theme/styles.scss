@@ -1,0 +1,2069 @@
+@import 'vendor/awesome-showcase/css/style'
+@import 'vendor/twitter/bootstrap'
+
+.aw_showcase
+  position: relative
+  margin: auto
+  .showcase-image, .showcase-width
+    max-width: 100%
+    height: auto
+
+/*	Resets and adjustments
+
+html
+  padding-top: 0px
+  background-color: #313131
+
+header, footer
+  background: url('../img/pattern/star_sky.png')
+  background-color: #313131
+  border-bottom: 1px solid #313131
+  display: block
+
+body
+  background: url('../img/pattern/gray_bg.png')
+  margin: 0
+  padding: 0
+  font-size: 13px
+  font-family: Arial, Helvetica, sans-serif
+  line-height: 1.65em
+  direction: ltr
+
+p
+  margin-bottom: 20px
+
+h1, h2, h3, h4, h5
+  line-height: normal
+  text-transform: uppercase
+
+h6
+  line-height: normal
+  text-transform: uppercase
+  margin: 0 0 5px
+
+h1, h2, h3, h4, h5, h6, #call-phone, #banner .oneByOne_item span
+  font-family: 'open sans'
+  font-weight: 400
+
+iframe
+  border: none
+  margin-bottom: 20px
+
+h3
+  font-size: 15px
+
+h1, h2, .prop-title
+  font-size: 20px
+  font-weight: bold
+  color: #535353
+  margin-top: 3px
+  margin-bottom: 10px
+  text-shadow: 0 1px rgba(255, 255, 255, 0.8)
+
+h1
+  letter-spacing: -1px
+
+h2
+  letter-spacing: -1px
+  font-size: 17px
+  font-weight: normal
+  display: block
+  margin-bottom: 3px
+
+h3, h4, .prop-title
+  font-size: 17px
+  font-weight: normal
+  display: block
+  margin-bottom: 3px
+
+h4
+  margin: 0 0 20px
+  text-transform: none
+
+nav, .logo-area, footer > div
+  max-width: 940px
+  margin: 0 auto
+  padding: 0 10px
+
+section#main
+  padding: 20px
+  max-width: 900px
+  margin: 0 auto
+  background-color: #FAFAFA
+
+abbr
+  &[title], &[data-original-title]
+    cursor: default
+    border: none
+
+a
+  color: #C24F19
+  &:active
+    color: #C24F19
+  &:hover
+    color: #B93C00
+  &:link
+    -webkit-tap-highlight-color: #e53b2c
+  outline: none
+  &:active, &:selected, &:visited
+    outline: none
+
+button
+  outline: none
+
+input
+  &[type="reset"], &[type="button"], &[type="submit"]
+    outline: none
+
+textarea:focus
+  border-color: rgba(196, 80, 15, 0.8)
+  background-color: #FFE8CA
+  outline: 0
+  outline: thin dotted \9
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+
+input
+  &[type="text"]:focus, &[type="password"]:focus, &[type="datetime"]:focus, &[type="datetime-local"]:focus, &[type="date"]:focus, &[type="month"]:focus, &[type="time"]:focus, &[type="week"]:focus, &[type="number"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="search"]:focus, &[type="tel"]:focus, &[type="color"]:focus
+    border-color: rgba(196, 80, 15, 0.8)
+    background-color: #FFE8CA
+    outline: 0
+    outline: thin dotted \9
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+
+.uneditable-input:focus
+  border-color: rgba(196, 80, 15, 0.8)
+  background-color: #FFE8CA
+  outline: 0
+  outline: thin dotted \9
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(196, 80, 15, 0.6)
+
+/*	Navigation Bar
+
+nav
+  font-size: 14px
+  a
+    text-transform: uppercase
+    color: #272727
+
+/* .navbar-inner
+  min-height: 45px
+  padding-right: 5px
+  padding-left: 10px
+  padding-top: 5px
+  padding-bottom: 0px
+  border-radius: 5px 5px 0px 0px
+  -moz-border-radius: 5px 5px 0px 0px
+  -webkit-border-radius: 5px 5px 0px 0px
+  -khtml-border-radius: 5px 5px 0px 0px
+  border: none
+    
+.navbar-inner
+  min-height: 45px
+  padding-right: 5px
+  padding-left: 10px
+  padding-top: 5px
+  padding-bottom: 0px
+  background-color: #fafafa
+  background-image: -moz-linear-gradient(top, white, #f2f2f2)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2))
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2)
+  background-image: -o-linear-gradient(top, white, #f2f2f2)
+  background-image: linear-gradient(to bottom, white, #f2f2f2)
+  background-repeat: repeat-x
+  border-radius: 5px 5px 0 0
+  -moz-border-radius: 5px 5px 0px 0px
+  -webkit-border-radius: 5px 5px 0px 0px
+  -khtml-border-radius: 5px 5px 0px 0px
+  border: none
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0)
+  *zoom: 1
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+  &:before, &:after
+    display: table
+    line-height: 0
+    content: ""
+
+nav.navbar
+  margin-bottom: 0
+
+.navbar
+  .nav
+    li.dropdown
+      &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle
+        background-color: #C4500F
+        color: white
+        text-shadow: 0 1px 0 #000
+    > .active > a
+      background-color: #C4500F
+      color: white
+      text-shadow: 0 1px 0 #000
+      &:hover, &:focus
+        background-color: #C4500F
+        color: white
+        text-shadow: 0 1px 0 #000
+  .btn-navbar
+    &:hover, &:active, &.active, &.disabled, &[disabled]
+      background-color: #C4500F
+  .nav
+    > .active > a
+      -webkit-border-radius: 4px
+      -moz-border-radius: 4px
+      border-radius: 4px
+      &:hover, &:focus
+        -webkit-border-radius: 4px
+        -moz-border-radius: 4px
+        border-radius: 4px
+    li.dropdown
+      &.open > .dropdown-toggle, &.active > .dropdown-toggle, &.open.active > .dropdown-toggle
+        -webkit-border-radius: 4px
+        -moz-border-radius: 4px
+        border-radius: 4px
+    >
+      .active > a
+        font-weight: bold
+        &:hover, &:focus
+          font-weight: bold
+      li > a
+        padding: 5px 10px 5px
+        margin: 5px 5px 5px 0
+        color: #353535
+        &:hover
+          color: #000
+
+.navbar-form .btn-peach
+  padding-bottom: 3px
+  font-weight: bold
+
+.navbar .btn-navbar
+  margin-bottom: 10px
+  color: white
+  text-shadow: 0 1px 1px rgba(82, 36, 0, 0.75)
+  background-color: #C4500F
+  background-image: -moz-linear-gradient(top, #f76300, #c4500f)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#c4500f))
+  background-image: -webkit-linear-gradient(top, #f76300, #c4500f)
+  background-image: -o-linear-gradient(top, #f76300, #c4500f)
+  background-image: linear-gradient(to bottom, #f76300, #c4500f)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F76300', endColorstr='#C4500F', GradientType=0)
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F76300, endColorstr=#C4500F)"
+  border: 1px solid #D16847
+  border-bottom-color: #AC4727
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+
+.nav-collapse
+  .navbar-form, .navbar-search
+    padding: 0 5px 5px 0
+    height: auto
+  .nav > li > a, .dropdown-menu a
+    padding: 5px 12px
+
+.dropdown-menu
+  a
+    font-weight: normal
+    text-transform: none
+    font-size: 13px
+  li > a
+    display: block
+    padding: 3px 15px
+    clear: both
+    font-weight: normal
+    line-height: 18px
+    color: #333
+    white-space: nowrap
+
+h1 > .btn-group
+  margin-top: 5px
+
+.btn-group > .btn + .dropdown-toggle
+  padding-right: 6px
+  padding-left: 6px
+
+*.navbar .nav > .active > a,
+
+.dropdown-menu li > a
+  &:hover, &:focus
+    color: #ffffff
+    text-decoration: none
+    background-color: #0081c2
+    background-image: -moz-linear-gradient(top, #f76300, #c4500f)
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f76300), to(#c4500f))
+    background-image: -webkit-linear-gradient(top, #f76300, #c4500f)
+    background-image: -o-linear-gradient(top, #f76300, #c4500f)
+    background-image: linear-gradient(to bottom, #f76300, #c4500f)
+    background-repeat: repeat-x
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F76300', endColorstr='#C4500F', GradientType=0)
+    text-shadow: none
+
+.dropdown-submenu:hover > a
+  color: #ffffff
+  text-decoration: none
+  background-color: #0081c2
+  background-image: -moz-linear-gradient(top, #f76300, #c4500f)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f76300), to(#c4500f))
+  background-image: -webkit-linear-gradient(top, #f76300, #c4500f)
+  background-image: -o-linear-gradient(top, #f76300, #c4500f)
+  background-image: linear-gradient(to bottom, #f76300, #c4500f)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F76300', endColorstr='#C4500F', GradientType=0)
+  text-shadow: none
+
+.dropdown-menu .active > a
+  color: #ffffff
+  text-decoration: none
+  background-color: #0081c2
+  background-image: -moz-linear-gradient(top, #f76300, #c4500f)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f76300), to(#c4500f))
+  background-image: -webkit-linear-gradient(top, #f76300, #c4500f)
+  background-image: -o-linear-gradient(top, #f76300, #c4500f)
+  background-image: linear-gradient(to bottom, #f76300, #c4500f)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F76300', endColorstr='#C4500F', GradientType=0)
+  text-shadow: none
+  &:hover
+    color: #ffffff
+    text-decoration: none
+    background-color: #0081c2
+    background-image: -moz-linear-gradient(top, #f76300, #c4500f)
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f76300), to(#c4500f))
+    background-image: -webkit-linear-gradient(top, #f76300, #c4500f)
+    background-image: -o-linear-gradient(top, #f76300, #c4500f)
+    background-image: linear-gradient(to bottom, #f76300, #c4500f)
+    background-repeat: repeat-x
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F76300', endColorstr='#C4500F', GradientType=0)
+    text-shadow: none
+
+.navbar .nav li.dropdown
+  &.open > .dropdown-toggle .caret, &.active > .dropdown-toggle .caret, &.open.active > .dropdown-toggle .caret
+    border-top-color: #FFF
+    border-bottom-color: #FFF
+
+.nav .dropdown-toggle .caret, .nav-tabs .active .dropdown-toggle .caret
+  border-top-color: #CC6200
+  border-bottom-color: #CC6200
+
+.nav .dropdown-toggle:hover .caret
+  border-top-color: #9B4A00
+  border-bottom-color: #9B4A00
+
+.nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav > li.dropdown.open.active > a:hover
+  color: white
+  background-color: #DD6303
+  border-color: #999
+
+.navbar-form
+  margin-bottom: 0
+  *zoom: 1
+  &:before
+    display: table
+    line-height: 0
+    content: ""
+  &:after
+    display: table
+    line-height: 0
+    content: ""
+    clear: both
+  input, select, .radio, .checkbox
+    margin-top: 5px
+  input, select, .btn
+    display: inline-block
+    margin-bottom: 0
+  input
+    &[type="image"], &[type="checkbox"], &[type="radio"]
+      margin-top: 3px
+  .input-append, .input-prepend
+    margin-top: 6px
+    white-space: nowrap
+  .input-append input, .input-prepend input
+    margin-top: 0
+
+.navbar-search
+  position: relative
+  float: left
+  margin-top: 5px
+  margin-bottom: 0
+  .search-query
+    padding: 4px 14px
+    margin-bottom: 0
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+    font-size: 13px
+    font-weight: normal
+    line-height: 1
+    -webkit-border-radius: 15px
+    -moz-border-radius: 15px
+    border-radius: 15px
+
+/*	Logo Area
+
+.logo-area
+  padding: 0
+  display: block
+  height: auto
+  position: relative
+  width: 100%
+
+#logo
+  display: block
+  background: url('../img/logo.png') bottom left no-repeat
+  width: auto
+  height: 60px
+  padding: 10px
+  margin-bottom: 5px
+  overflow: hidden
+  cursor: pointer
+
+#secondary-logo
+  display: block
+  width: 450px
+  height: 53px
+  position: absolute
+  z-index: 1
+  top: 5px
+  right: 0
+  background: url('../img/compres-logo.png') top right no-repeat
+  cursor: pointer
+
+#call-phone
+  font-size: 24px
+  text-align: right
+  color: #cfcfcf
+  z-index: 2
+  position: absolute
+  bottom: 1px
+  right: 0
+  width: auto
+
+/* ----------------------------------------------------------------------
+/*	Main body text area
+ */* ----------------------------------------------------------------------
+
+.body-text
+  padding: 20px 0 0 0
+  >
+    div
+      padding-left: 0
+      padding-right: 0
+    .container-fluid > .row-fluid > .span4
+
+/*	Google Maps
+
+#map_div
+  width: 100%
+  height: 376px
+  margin: 0 auto 20px auto
+  border-top: 1px solid #fafafa
+  border: 1px solid #fafafa
+  img
+    max-width: none
+
+#single_map
+  margin-bottom: 20px
+  border-bottom: 1px solid #fff
+  border-top: 1px solid #fff
+  width: 100%
+  height: 250px
+
+/*	Call to action
+
+.call-to-action
+  padding: 10px
+  min-height: 70px
+  max-height: 70px
+  overflow: hidden
+  margin-top: 0
+  margin-bottom: 20px
+  display: block
+  font-size: 130%
+  border: 1px solid #DDD
+  -khtml-border-radius: 0px
+  -webkit-border-radius: 0px
+  -moz-border-radius: 0px
+  border-radius: 0px
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055)
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055)
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055)
+
+/* ----------------------------------------------------------------------
+/*	widgets
+ */* ----------------------------------------------------------------------
+
+.qbox
+  border-radius: 3px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  padding: 10px
+  display: block
+  h3
+    border-radius: 3px
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    padding: 10px
+    display: block
+    box-sizing: content-box
+    background-color: #363636
+    background-image: -moz-linear-gradient(top, #444444, #222222)
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222))
+    background-image: -webkit-linear-gradient(top, #444444, #222222)
+    background-image: -o-linear-gradient(top, #444444, #222222)
+    background-image: linear-gradient(to bottom, #444444, #222222)
+    background-repeat: repeat-x
+    border-color: #222 #222 black
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0)
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    color: #F6F6F6
+    text-shadow: 0 1px black, 0 0 0.2em rgba(0, 0, 0, 0.7)
+    font-size: 14px
+    margin: -10px -10px 10px -10px
+    -webkit-border-radius: 3px 3px 0 0
+    -khtml-border-radius: 3px 3px 0 0
+    -moz-border-radius: 3px 3px 0 0
+    border-radius: 3px 3px 0 0
+
+#model-head
+  box-sizing: content-box
+  background-color: #363636
+  background-image: -moz-linear-gradient(top, #444444, #222222)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222))
+  background-image: -webkit-linear-gradient(top, #444444, #222222)
+  background-image: -o-linear-gradient(top, #444444, #222222)
+  background-image: linear-gradient(to bottom, #444444, #222222)
+  background-repeat: repeat-x
+  border-color: #222 #222 black
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0)
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+  color: #F6F6F6
+  text-shadow: 0 1px black, 0 0 0.2em rgba(0, 0, 0, 0.7)
+  font-size: 14px
+  margin: -10px -10px 10px -10px
+  -webkit-border-radius: 3px 3px 0 0
+  -khtml-border-radius: 3px 3px 0 0
+  -moz-border-radius: 3px 3px 0 0
+  border-radius: 3px 3px 0 0
+
+.qbox
+  float: none
+  position: relative
+  margin: 6px 0 16px 0 !important
+  width: auto
+  min-height: 150px !important
+  padding-bottom: 20px
+  background-color: #f5f5f5
+  border: 1px solid #AAA
+  text-shadow: 0 1px rgba(255, 255, 255, 0.8)
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2)
+  h3 >
+    i
+      top: 1px
+      font-size: 19px
+      margin-top: 2px
+      margin-right: 3px
+    label.badge
+      font-family: Arial
+      -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.25)
+      box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.25)
+  form label, p
+    font-size: 11px
+    display: block
+    width: 100%
+    margin: 5px 0 5px 1px
+    color: #666
+    font-weight: bold
+    border: 0
+    background: transparent
+    box-shadow: none
+
+.pin p
+  font-size: 11px
+  display: block
+  width: 100%
+  margin: 5px 0 5px 1px
+  color: #666
+  font-weight: bold
+  border: 0
+  background: transparent
+  box-shadow: none
+
+.qbox
+  input.disabled
+    font-size: 11px
+    display: block
+    width: 100%
+    margin: 5px 0 5px 1px
+    color: #666
+    font-weight: bold
+    border: 0
+    background: transparent
+    box-shadow: none
+  form
+    margin-bottom: 0
+  button
+    &.btn-inverse
+      width: 100%
+    &.btn
+      margin-top: 14px
+      font-size: 14px
+      padding-top: 4px
+      padding-bottom: 4px
+  a.btn
+    margin-top: 14px
+    font-size: 14px
+    padding-top: 4px
+    padding-bottom: 4px
+  input.disabled
+    padding: 0
+    cursor: default
+
+/* ----------------------------------------------------------------------
+/*	Widgets: Shortlist
+ */* ----------------------------------------------------------------------
+
+.shortlist
+  padding: 0
+  margin: 0
+  display: block
+  li
+    display: block
+    position: relative
+    padding: 3px 0
+    margin: 0 0 3px 0
+    font-size: 11px
+    font-weight: bold
+    border-bottom: 1px dashed #A8A8A8
+    img
+      display: inline-block
+      margin-right: 3px
+      margin-bottom: 3px
+      border: 2px solid #FFF
+      vertical-align: top
+      width: 44px
+    div
+      display: inline-block
+      line-height: 14px
+      padding-bottom: 5px
+      width: 140px
+    a
+      display: block
+      margin-bottom: 4px
+    button
+      width: 18px
+      height: 18px
+      display: block
+      position: absolute
+      top: 5px
+      right: 1px
+      background: url('../img/bin.png') center center no-repeat #f1f1f1
+      border: none
+      -webkit-border-radius: 3px
+      -khtml-border-radius: 3px
+      -moz-border-radius: 3px
+      border-radius: 3px
+      &:hover
+        background-color: #E6E6E6
+        -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+        -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+        box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125)
+
+/* ----------------------------------------------------------------------
+/*	Widgets: Mortgage Calculator
+ */* ----------------------------------------------------------------------
+
+.mortcalc
+  position: relative
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    display: block
+    width: 100%
+    li
+      display: block
+      width: 100%
+      input
+        height: 27px
+        line-height: 27px
+  a.btn
+    margin: 5px 0 0
+  label
+    width: 85px !important
+    display: inline-block !important
+  input
+    margin: 5px 0 5px 1px
+    font-size: 12px
+    font-weight: bold
+    padding: 0px 4px
+    line-height: 11px
+    display: inline-block
+
+.results
+  display: none
+  input.disabled, p
+    padding: 0
+    margin: 0
+    height: 18px
+  input.disabled
+    margin-bottom: 1px
+  p
+    display: block
+    padding-top: 5px
+  a.btn i
+    margin-top: 3px
+    margin-left: -5px
+    margin-right: 4px
+
+p.disclaimer
+  font-weight: normal
+  margin: 10px 0 0
+  display: block
+  width: 100%
+  height: auto
+  line-height: 14px
+  color: #A3A3A3
+  /*Color of Disclaimer Text
+  font-size: 10px
+  /*Font Size of Disclaimer Text
+  font-family: Arial, Helvetica, sans-serif
+
+/* ----------------------------------------------------------------------
+/*	UI slider for widgets
+
+.ui-slider
+  position: relative
+  text-align: left
+  outline: none
+  .ui-slider-handle
+    position: absolute
+    z-index: 2
+    width: 16px
+    height: 16px
+    cursor: default
+    background: url('../img/slider/handle.png') no-repeat
+    border: none
+    cursor: pointer
+  .ui-slider-range
+    position: absolute
+    z-index: 1
+    font-size: .7em
+    display: block
+    border: 0
+    background: url('../img/slider/sliderOverlay.png') repeat-x
+    -moz-border-radius: 4px
+    -webkit-border-radius: 4px
+    -khtml-border-radius: 4px
+    border-radius: 4px
+
+.ui-slider-horizontal
+  height: 8px
+  background: url('../img/slider/sliderBg.png') repeat-x
+  clear: both
+  margin: 8px 0
+  -moz-border-radius: 6px
+  -webkit-border-radius: 6px
+  -khtml-border-radius: 6px
+  border-radius: 6px
+  .ui-slider-handle
+    top: -5px
+    margin-left: -0.6em
+  .ui-slider-range
+    top: 0
+    height: 100%
+  .ui-slider-range-min
+    left: 0
+  .ui-slider-range-max
+    right: 0
+
+.ui-slider-vertical
+  width: 6px
+  height: 100px
+  background: url('../img/slider/sliderBgVert.png') repeat-y
+  .ui-slider-handle
+    left: -5px
+    margin-left: 0
+    margin-bottom: -0.6em
+  .ui-slider-range
+    left: 0
+    width: 100%
+    background: url('../img/slider/sliderOverlayVert.png') repeat-y
+  .ui-slider-range-min
+    bottom: 0
+  .ui-slider-range-max
+    top: 0
+
+/* ----------------------------------------------------------------------
+/*	Property information list display
+ */* ----------------------------------------------------------------------
+
+p
+  &.location, &.price, &.description
+    margin: 0
+
+.appartment-listing
+  p
+    margin-left: 5px
+  .prop-title
+    margin-left: 5px
+    font-size: 15px
+    margin-top: -1px
+    text-transform: none
+    font-weight: bold
+
+a.prop-title
+  font-size: 15px
+  margin-top: -1px
+  text-transform: none
+  font-weight: bold
+  &:active
+    font-size: 15px
+    margin-top: -1px
+    text-transform: none
+    font-weight: bold
+
+.prop-title
+  margin-bottom: 10px
+
+p
+  &.size
+    font-size: 12px
+    text-transform: none
+    color: #3A3A3A
+    margin-bottom: 7px
+  &.price
+    font-weight: bold
+    color: #5C5C5C
+    margin-bottom: 6px
+    font-size: 15px
+  &.description
+    font-size: 12px
+    color: #5c5c5c
+  &.body-paragraph
+    margin: 0 5px 30px
+    text-shadow: 0 1px rgba(255, 255, 255, 0.8)
+
+.signature
+  display: block
+  margin-top: 13px
+  font-weight: bold
+  font-style: italic
+  color: #5C5C5C
+  text-align: right
+  padding-right: 10px
+
+/* ----------------------------------------------------------------------
+/*	Hot Properties
+ */* ----------------------------------------------------------------------
+
+.dropdown-results
+  font-size: 14px
+  font-family: 'open sans'
+
+.hotproperties
+  div
+    &.thumbnail
+      position: relative
+      background: none
+      padding: 0
+      border: none
+      box-shadow: none
+      border-bottom: 1px solid #FFF
+      border-radius: 0px
+      -webkit-border-radius: 0px
+      -moz-border-radius: 0px
+      margin-bottom: 20px
+    &:hover.thumbnail
+      border-color: #B93C00
+      > img
+        border-color: #E29E7E
+  .thumbnail
+    img
+      margin-bottom: 10px
+      width: 100%
+      -webkit-box-sizing: border-box
+      /* webkit
+      -khtml-box-sizing: border-box
+      /* konqueror
+      -moz-box-sizing: border-box
+      /* firefox
+      box-sizing: border-box
+      /* css3
+    .caption
+      padding: 0 5px
+
+.thumbnail > img
+  margin-left: 0
+  width: 100%
+
+/* ----------------------------------------------------------------------
+/*	Short List & View Details buttons
+ */* ----------------------------------------------------------------------
+
+.list-btns
+  display: block
+  list-style: none
+  padding: 0
+  margin: 10px 0 10px 0
+  li
+    display: inline-block
+    padding: 0
+    margin: 0 4px 7px 0
+    a:hover i
+      text-decoration: none
+
+/* ----------------------------------------------------------------------
+/*	Property Listing
+ */* ----------------------------------------------------------------------
+
+.listing-js
+  .container-fluid
+    padding: 0
+    margin: 0 0 20px 0
+    position: relative
+  .row-fluid
+    border-bottom: 1px solid #fafafa
+    &:hover
+      border-bottom-color: #C24F19
+
+#renting-map-js > div:hover
+  border-bottom-color: #C24F19
+
+.row-fluid.appartment-listing
+  border-bottom: none
+  > .span6
+    border-bottom: 1px solid #fafafa
+    padding-bottom: 0
+    padding-top: 0
+
+.latest-listing
+  padding: 0
+  margin: 0 0 20px 0
+  position: relative
+
+.listing-js
+  .container-fluid img
+    border: 3px solid #FFF
+    margin-bottom: 20px
+    box-sizing: border-box
+  select
+    width: 100%
+    height: 30px
+    margin-top: -7px
+
+.pagination
+  margin: 20px 0 0
+
+.listing-js #google-map-js
+  margin-top: 6px
+
+#renting-map-js
+  > div
+    &:nth-child(odd)
+      margin-left: 0
+    border-bottom: 1px solid #FFF
+    margin-bottom: 20px
+    display: block
+  p
+    &.street, &.lat, &.lng
+      display: none
+
+/* ----------------------------------------------------------------------
+/*	Property Thumbnail Sticker
+ */* ----------------------------------------------------------------------
+
+.sticker
+  display: block
+  position: absolute
+  top: -3px
+  left: -2px
+  z-index: 99
+  border: 2px solid #FFF
+  text-shadow: 0 1px rgba(0, 0, 0, 0.8)
+  font-weight: bold
+  text-align: center
+  padding: 1px 8px
+  -webkit-border-radius: 5px 5px 5px 5px
+  -moz-border-radius: 5px 5px 5px 5px
+  border-radius: 5px 5px 5px 5px
+
+.sticker-sold
+  color: #FFF
+  border-color: #D36F03
+  background: #E26300
+
+.sticker-hot
+  color: #FFF
+  border-color: #AA342E
+  background: #c1171a
+
+.sticker-just-listed
+  color: #640608
+  border-color: #EE7200
+  text-shadow: 0 1px rgba(255, 255, 255, 0.8)
+  background: #ffa84c
+  /* Old browsers
+  background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%)
+  /* FF3.6+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffa84c), color-stop(100%, #ff7b0d))
+  /* Chrome,Safari4+
+  background: -webkit-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%)
+  /* Chrome10+,Safari5.1+
+  background: -o-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%)
+  /* Opera 11.10+
+  background: -ms-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%)
+  /* IE10+
+  background: linear-gradient(to bottom, #ffa84c 0%, #ff7b0d 100%)
+  /* W3C
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 )
+  /* IE6-9
+
+div.gallery span.sticker
+  font-size: 20px
+  padding: 5px 10px
+
+/* ----------------------------------------------------------------------
+/*	Footer
+ */* ----------------------------------------------------------------------
+
+footer
+  margin-top: 0
+  font-weight: bold
+  padding: 30px 0 0
+  border-bottom: 15px solid #313131
+  a:hover
+    text-decoration: none
+  p, ul, li
+    margin: 0
+    color: #DBDBDB
+    font-weight: normal
+    list-style: none
+    padding: 0
+  p
+    display: block
+    text-transform: uppercase
+    border-bottom: 1px dashed #575757
+    padding-bottom: 9px
+    margin-bottom: 7px
+    &.pushup
+      margin-top: 10px
+  li a
+    color: silver
+    font-size: 12px
+    font-weight: normal
+    display: block
+    padding: 2px 0 2px 8px
+    margin-left: -8px
+    &:hover
+      color: #FAFAFA
+      background: rgba(0, 0, 0, 0.1)
+  a
+    border: none
+    &:visited
+      border: none
+  .social-network
+    text-align: right
+    padding: 0
+    margin: -8px 0 0
+    li
+      a
+        background: none
+        padding: 0
+        margin: 0
+      display: inline-block
+      padding: 0
+      margin: 0
+      height: 20px !important
+      i
+        font-size: 25px
+        line-height: 25px
+        margin-top: 0
+        padding: 3px
+        width: auto
+        height: 25px
+        &:hover
+          color: #F76300
+          cursor: pointer
+  .footer-links
+    background: url('../img/transparant-20.png') top left repeat
+    padding: 10px 10px 0
+    margin: 0 !important
+  .contact-info
+    margin: 10px 0 25px !important
+    color: #A3A3A3
+    font-size: 12px
+    font-weight: normal
+    text-transform: uppercase
+  ul
+    margin: 0 0 20px 0
+    &.special li
+      display: inline-block
+
+/* ----------------------------------------------------------------------
+/*	Footer Double list (not in use)
+ */* ----------------------------------------------------------------------
+
+#double li
+  width: 50%
+
+#triple li
+  width: 33.333%
+
+#quad li
+  width: 25%
+
+#six li
+  width: 16.666%
+
+footer .socials i
+  padding: 5px
+  text-align: center
+  border-radius: 3px
+  border: 2px solid #FFF
+  color: #000
+  box-shadow: 0px 0px 2px #333
+
+/* ----------------------------------------------------------------------
+/*	Footer social logos
+ */* ----------------------------------------------------------------------
+
+.thumbnail, footer .socials i
+  background-color: #FAFAFA
+  background-image: -moz-linear-gradient(top, white, #f2f2f2)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2))
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2)
+  background-image: -o-linear-gradient(top, white, #f2f2f2)
+  background-image: linear-gradient(to bottom, white, #f2f2f2)
+  background-repeat: repeat-x
+  border: 1px solid #D4D4D4
+  /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065)
+
+/* ----------------------------------------------------------------------
+/*	Peach color button
+ */* ----------------------------------------------------------------------
+
+.btn-peach
+  color: white
+  text-shadow: 0 1px 1px rgba(82, 36, 0, 0.75)
+  background-color: #C4500F
+  background-image: -moz-linear-gradient(top, #f76300, #c4500f)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#c4500f))
+  background-image: -webkit-linear-gradient(top, #f76300, #c4500f)
+  background-image: -o-linear-gradient(top, #f76300, #c4500f)
+  background-image: linear-gradient(to bottom, #f76300, #c4500f)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F76300', endColorstr='#C4500F', GradientType=0)
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+  /* For Internet Explorer 8
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F76300, endColorstr=#C4500F)"
+  border: 1px solid #D16847
+  border-bottom-color: #AC4727
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  &:hover, &:active, &.active, &.disabled, &[disabled]
+    color: #ffffff
+    background-color: #C4500F
+    *background-color: #C4500F
+  &:active, &.active
+    background-color: #C4500F \9
+
+/* ----------------------------------------------------------------------
+/*	Slider Tweaks
+ */* ----------------------------------------------------------------------
+
+.buttonCon
+  background: url('../img/transparant-10.png') top left repeat
+  padding: 5px
+  bottom: -5px
+  border-radius: 5px 5px 0px 0px
+  -webkit-border-radius: 5px 5px 0px 0px
+  -moz-border-radius: 5px 5px 0px 0px
+
+#banner .oneByOne_item span
+  &.slide5Txt2
+    font-size: 16px
+    background: #292929
+    color: white
+    margin-top: 0
+  &.slide5Txt1
+    color: white
+    background: #E25A00
+
+/* ----------------------------------------------------------------------
+/*	Tabs
+ */* ----------------------------------------------------------------------
+
+.nav-tabs > li
+  &:first-child
+    border-left: 1px solid #EDEDED
+  border-right: 1px solid #EDEDED
+  > a
+    margin-right: 0
+    padding-top: 5px
+    padding-bottom: 5px
+    border: none
+    border-top: 2px solid #C7C7C7
+    border-bottom: 1px solid #222
+    color: #9B9B9B
+    text-transform: none
+
+.nav-pills > li > a
+  margin-right: 0
+  padding-top: 5px
+  padding-bottom: 5px
+  border: none
+  border-top: 2px solid #C7C7C7
+  border-bottom: 1px solid #222
+  color: #9B9B9B
+  text-transform: none
+
+.nav-tabs
+  > li > a:hover
+    margin-right: 0
+    padding-top: 5px
+    padding-bottom: 5px
+    border: none
+    border-top: 2px solid #C7C7C7
+    border-bottom: 1px solid #222
+    color: #9B9B9B
+    text-transform: none
+  .dropdown-menu li a
+    text-transform: none
+    font-family: inherit
+  >
+    .active > a
+      color: #616161
+      border: none
+      border-top: 2px solid #D56F00
+      font-weight: bold
+      background-color: #FFF
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+      border-bottom: 1px solid #fff
+      &:hover
+        color: #616161
+        border: none
+        border-top: 2px solid #D56F00
+        font-weight: bold
+        background-color: #FFF
+        -webkit-border-radius: 0
+        -moz-border-radius: 0
+        border-radius: 0
+        border-bottom: 1px solid #fff
+    li > a
+      background: #F8F8F8
+      border-bottom-color: #E2E2E2
+      -webkit-border-radius: 0
+      -moz-border-radius: 0
+      border-radius: 0
+      &:hover
+        background: #F8F8F8
+        border-bottom-color: #E2E2E2
+        -webkit-border-radius: 0
+        -moz-border-radius: 0
+        border-radius: 0
+        border-color: none
+  border-bottom: 1px solid #CECECE
+  margin-bottom: 0
+
+.tab-content
+  border: 1px solid #EDEDED
+  border-top: none
+  padding: 10px
+  background-color: #FFF
+
+.nav-tabs > li > a
+  padding: 15px 15px 10px
+  &:hover
+    padding: 15px 15px 10px
+
+/* ----------------------------------------------------------------------
+/*	Gallery
+ */* ----------------------------------------------------------------------
+
+.gallery
+  position: relative
+  margin-bottom: 20px
+
+/* ----------------------------------------------------------------------
+/*	Page Header
+ */* ----------------------------------------------------------------------
+
+.page-header
+  padding-bottom: 9px
+  margin: 3px 0 15px
+  font-size: 30px
+  color: #5E5E5E
+
+/* ----------------------------------------------------------------------
+/*	Forms
+ */* ----------------------------------------------------------------------
+
+.form-horizontal
+  background: url('../img/transparant-5.png') top left repeat
+  padding: 15px 10px 17px
+  margin: 0 0 20px
+  border-radius: 5px
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  .label
+    display: block
+    background: #8A8A8A
+    -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.25)
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.25)
+  label
+    font-size: 12px
+    font-weight: bold
+  input
+    max-height: 30px
+
+.contact-agent-form
+  .label
+    margin: 0 0 15px
+    padding: 5px 0 5px 5px
+  #prp_name
+    display: none
+
+.label_field
+  float: left
+  width: 31.3333333333%
+  padding-left: 6px
+  label
+    font-size: 12px
+    margin-top: 2px
+    font-weight: bold
+
+input#verify
+  width: 70px
+
+.field
+  margin-bottom: 15px
+
+.button-align
+  text-align: right
+
+.loader
+  padding: 0 10px
+
+/* ----------------------------------------------------------------------
+/*	Alerts
+ */* ----------------------------------------------------------------------
+
+.alert
+  border-color: #DBBB7E
+
+.desktop-alert-options
+  padding-right: 14px
+  position: relative
+  ul
+    position: absolute
+    top: 8px
+    right: 14px
+    padding: 0
+    margin: 0
+
+.alert-danger, .alert-error
+  color: #A75926
+  background-color: #EBD7C3
+  border-color: #D1A99A
+  font-size: 12px
+
+.desktop-alert-options ul li
+  display: inline-block
+
+.alert-info
+  border-color: #A7CAD1
+
+.alert-success
+  border-color: #A6C989
+
+/* ----------------------------------------------------------------------
+/*	Property Info Single Page
+ */* ----------------------------------------------------------------------
+
+.property-info
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+    font-size: 12px
+    li
+      list-style: none
+      font-size: 12px
+      background: url('../img/bullet-tick.png') left center no-repeat
+      padding: 0 0 0 20px
+      margin: 10px 0
+      display: block
+      &:first-child
+        margin-top: -5px
+  p
+    &.description
+      margin: 20px 0
+    &.asking-price
+      margin: 20px 0
+      font-size: 15px
+      line-height: 25px
+      font-weight: bold
+      text-align: right
+      display: block
+      padding: 5px 10px 4px
+      color: #fff
+      position: relative
+      text-shadow: 0 1px 0 rgba(33, 102, 0, 0.5)
+      -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.25)
+      box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.25), 0 1px 1px rgba(255, 255, 255, 0.25)
+      background: rgb(143, 196, 0)
+      /* Old browsers
+      background: -moz-linear-gradient(top, rgba(143, 196, 0, 1) 0%, rgba(143, 196, 0, 1) 100%)
+      /* FF3.6+
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(143, 196, 0, 1)), color-stop(100%, rgba(143, 196, 0, 1)))
+      /* Chrome,Safari4+
+      background: -webkit-linear-gradient(top, rgba(143, 196, 0, 1) 0%, rgba(143, 196, 0, 1) 100%)
+      /* Chrome10+,Safari5.1+
+      background: -o-linear-gradient(top, rgba(143, 196, 0, 1) 0%, rgba(143, 196, 0, 1) 100%)
+      /* Opera 11.10+
+      background: -ms-linear-gradient(top, rgba(143, 196, 0, 1) 0%, rgba(143, 196, 0, 1) 100%)
+      /* IE10+
+      background: linear-gradient(to bottom, rgba(143, 196, 0, 1) 0%, rgba(143, 196, 0, 1) 100%)
+      /* W3C
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8fc400', endColorstr='#8fc400',GradientType=0 )
+
+p.asking-price span
+  font-size: 15px
+  position: absolute
+  top: 6px
+  left: 8px
+
+/* ----------------------------------------------------------------------
+/*	Model-Header
+ */* ----------------------------------------------------------------------
+
+#model-head
+  margin: 0
+  padding: 15px 15px
+  -webkit-border-radius: 6px
+  -moz-border-radius: 6px
+  border-radius: 6px
+
+.modal-backdrop
+  background-color: #000
+
+/* ----------------------------------------------------------------------
+/*	Block Quote
+ */* ----------------------------------------------------------------------
+
+blockquote
+  background: url('../img/transparant-5.png') top left repeat
+  font: italic 15px / 1.6 "PT Serif", Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif
+  padding: 20px 20px 20px 40px
+  border-left: 2px solid #C9C9C9
+  line-height: normal
+  color: #747474
+  font-size: 15px
+  text-align: left
+  font-style: italic
+  p
+    line-height: normal
+    color: #747474
+    font-size: 15px
+    text-align: left
+    font-style: italic
+  &.gray p
+    color: #FFF
+  &.green
+    background: #D6E9D3
+    background: rgba(41, 218, 17, 0.05)
+    border-left-color: #9FB49C
+  &.white
+    background: #FFF
+    background: rgba(255, 255, 255, 1)
+  &.gray
+    background: #3A3A3A
+    border-left-color: #000
+  small
+    font-size: 12px
+  p
+    padding: 10px 0 5px
+
+/* ----------------------------------------------------------------------
+/*	PAGE ERROR "404"
+ */* ----------------------------------------------------------------------
+
+.dimention
+  font: normal 960% Arial
+  margin: 3% 0
+  text-align: center
+  color: white
+  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15)
+
+/* ----------------------------------------------------------------------
+/*	Divider
+ */* ----------------------------------------------------------------------
+
+.divider
+  width: auto
+  height: 0px
+  border-top: 1px solid #969696
+  border-bottom: 1px solid #fff
+  margin: 15px 0
+
+form .divider
+  margin: 10px 0
+
+/* ----------------------------------------------------------------------
+/*	Select 2 Adjustments
+ */* ----------------------------------------------------------------------
+
+.select2-container .select2-choice span, .select2-container-multi .select2-choices .select2-search-field input
+  font-size: 11px
+  font-weight: bold
+
+.chzn-select a
+  font-family: Arial
+
+/* ----------------------------------------------------------------------
+/*	Second menu
+ */* ----------------------------------------------------------------------
+
+.qbox.accord-menu
+  padding-bottom: 0
+  background: url('../img/paven.png')
+
+/** Icon Span for each first child *
+
+.icon
+  display: block-inline
+  position: absolute
+  top: 7px
+  right: 5px
+  padding: 0
+  margin: 0
+  width: 18px
+  height: 18px
+  border-radius: 3px
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border: 1px dotted #BECAE7
+  background: #FFF
+  -webkit-transition: background 0.3s linear
+  -moz-transition: background 0.3s linear
+  -o-transition: background 0.3s linear
+  transition: background 0.3s linear
+
+/** Color change when first child is clicked *
+
+.ctAccordion.skin-color > li.open > a span.icon, .info .close
+  background: #D15503
+  -webkit-box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.2)
+  box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.2)
+  width: 20px
+  height: 20px
+  border: none
+
+/** Color change when second child is clicked *
+
+.menu-item-count
+  border: none
+  background-image: none
+  background-color: #cde0f8
+  width: 20px
+  height: 20px
+  line-height: 20px
+  color: #5f7285
+  font-weight: bold
+  text-align: center
+
+.ctAccordion.skin-color > li.open > ul > li.open > a span.menu-item-count
+  background-color: #c1cedf
+  color: #48596B
+  -webkit-box-shadow: inset 0px 1px 2px 0.5px rgba(0, 0, 0, 0.3)
+  box-shadow: inset 0px 1px 2px 0.5px rgba(0, 0, 0, 0.3)
+
+/** general settings *
+
+ul.ctAccordion.skin-color
+  padding: 0
+  margin: -10px -10px 0 -10px
+  background: #E6E6E6
+
+.ctAccordion.skin-color
+  a
+    text-decoration: none
+    display: block
+    padding: 7px 3px 7px 5px
+    font-size: 12px
+    /*min-width: 100%;
+    position: relative
+    text-shadow: 0 1px 0 white
+    text-transform: none
+    /*     
+     *     Force border-box so that % widths fit the parent
+     *     container without overlap because of margin/padding.
+     * 
+     *     More Info : http://www.quirksmode.org/css/box.html
+    -webkit-box-sizing: border-box
+    /* webkit
+    -khtml-box-sizing: border-box
+    /* konqueror
+    -moz-box-sizing: border-box
+    /* firefox
+    box-sizing: border-box
+    /* css3
+  .searchMatch
+    font-weight: bold
+    font-style: italic
+  padding: 0
+  margin: 0px
+  list-style: none
+  > li
+    margin: 0px
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 0 rgba(0, 0, 0, 0.25)
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 0 rgba(0, 0, 0, 0.25)
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 0 rgba(0, 0, 0, 0.25)
+    &:last-child
+      border-bottom: 1px solid #000
+    &:first-child
+      border-top: 2px solid #000
+    > a
+      color: #414141
+      padding-left: 14px
+      background-color: transparant
+      text-shadow: none
+      &:hover
+        text-decoration: none
+        border-left: 4px solid #333
+        padding-left: 10px
+        span.icon
+          border: 1px solid #aaa
+    &.open
+      > a
+        font-weight: bold
+        border-left: 4px solid #333
+        padding-left: 10px
+        &:hover span.icon
+          border: none
+      > ul > li.open > a
+        text-decoration: none
+        background-color: #EAE1D8 !important
+        color: #1F1F1F
+        border-left: 4px solid #D88E65
+        font-weight: bold
+        padding-left: 26px
+    >
+      a.head!
+      span
+        color: #B3E1C2
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+        > li
+          margin: 0px
+          &:first-child
+            border-top: 1px solid #FFF
+          > a
+            color: #5E5E5E
+            padding-left: 30px
+            background: #F8F8F8 !important
+            &:hover
+              text-decoration: none
+              background-color: #EAE1D8 !important
+              color: #1F1F1F
+              border-left: 4px solid #D88E65
+              padding-left: 26px
+    > ul > li >
+      a.head
+        background: transparent url('img/pointer-blue.png') no-repeat center right
+      span
+        color: #B7D6EA
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+        > li
+          margin: 0px
+          &:last-child
+            border-bottom: 1px solid #f1f1f1
+          >
+            a
+              color: #5E5E5E
+              padding-left: 50px
+              background: #fff
+              &:hover
+                text-decoration: none
+                background-color: #fafafa !important
+                color: #000
+                border-left: 4px solid #EAE1D8
+                padding-left: 46px
+            span
+              color: #F0B3B3
+
+/** 1st level *
+
+/** 2nd level *
+
+/** 3rd level *
+
+/* ----------------------------------------------------------------------
+/*	About Us - Agent Info
+ */* ----------------------------------------------------------------------
+
+p
+  &.agent-name, &.agent-title, &.agent-phone, &.agent-email
+    font-weight: bold
+    margin: 0
+  &.agent-name
+    text-transform: capitalize
+    font-size: 14px
+  &.agent-title
+    margin: 0 0 5px
+    color: #6B6B6B
+  &.agent-phone
+    text-transform: lowercase
+  &.agent-email
+    text-transform: lowercase
+    a
+      text-transform: lowercase
+
+ul.agent-social
+  margin: 0
+  padding: 0
+  li
+    margin: 10px 0
+    padding: 0
+    display: inline-block
+    a
+      font-size: 22px
+      &:hover
+        text-decoration: none
+        color: #333
+      i
+        width: auto
+
+img.team-member
+  margin: 0 0 5px
+  width: 100%
+  -webkit-box-sizing: border-box
+  /* webkit
+  -khtml-box-sizing: border-box
+  /* konqueror
+  -moz-box-sizing: border-box
+  /* firefox
+  box-sizing: border-box
+  /* css3
+
+/* ----------------------------------------------------------------------
+/*	Video Embed
+ */* ----------------------------------------------------------------------
+
+.new-video-js
+  margin-bottom: 20px
+  margin-top: 20px
+
+/* ----------------------------------------------------------------------
+/*	iPhone Footer
+ */* ----------------------------------------------------------------------
+
+.iphone-footer-border
+  width: 100%
+  position: fixed
+  z-index: 100
+  bottom: 45px
+  left: 0
+  height: 1px
+  border-top: 1px solid #000
+
+.iphone-footer
+  width: 100%
+  position: fixed
+  z-index: 99
+  bottom: 0
+  left: 0
+  height: 45px
+  border-top: 1px solid #747474
+  background: rgb(56, 51, 51)
+  /* Old browsers
+  background: -moz-linear-gradient(top, rgba(56, 51, 51, 1) 0%, rgba(30, 30, 30, 1) 51%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%)
+  /* FF3.6+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(56, 51, 51, 1)), color-stop(51%, rgba(30, 30, 30, 1)), color-stop(51%, rgba(10, 14, 10, 1)), color-stop(100%, rgba(10, 8, 9, 1)))
+  /* Chrome,Safari4+
+  background: -webkit-linear-gradient(top, rgba(56, 51, 51, 1) 0%, rgba(30, 30, 30, 1) 51%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%)
+  /* Chrome10+,Safari5.1+
+  background: -o-linear-gradient(top, rgba(56, 51, 51, 1) 0%, rgba(30, 30, 30, 1) 51%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%)
+  /* Opera 11.10+
+  background: -ms-linear-gradient(top, rgba(56, 51, 51, 1) 0%, rgba(30, 30, 30, 1) 51%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%)
+  /* IE10+
+  background: linear-gradient(to bottom, rgba(56, 51, 51, 1) 0%, rgba(30, 30, 30, 1) 51%, rgba(10, 14, 10, 1) 51%, rgba(10, 8, 9, 1) 100%)
+  /* W3C
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#383333', endColorstr='#0a0809',GradientType=0 )
+  /* IE6-9
+  ul
+    position: relative
+    margin: 0 auto
+    padding: 0
+    list-style: none
+    overflow: hidden
+  li
+    position: relative
+    margin: 0 auto
+    padding: 0
+    list-style: none
+    overflow: hidden
+    &:first-child
+      margin-left: 9px
+      border-left: none
+    &:last-child
+      border-right: none
+    display: block
+    float: left
+    width: 31.655555%
+    margin-top: 0px
+    height: 43px
+    border-right: 1px solid #444
+    border-left: 1px solid #000
+    -webkit-box-sizing: border-box
+    /* webkit
+    -khtml-box-sizing: border-box
+    /* konqueror
+    -moz-box-sizing: border-box
+    /* firefox
+    box-sizing: border-box
+    /* css3
+    a
+      display: block
+      text-align: center
+      color: #FFF
+      vertical-align: top
+      margin: 5px 7px 5px
+      border-radius: 6px
+      -webkit-border-radius: 6px
+      -moz-border-radius: 6px
+      &:hover
+        text-decoration: none
+        background: rgba(255, 255, 255, 0.15)
+        i
+          color: #59B8D6
+      label
+        position: absolute
+        top: 2px
+        right: 2px
+      i
+        display: block
+        width: 100%
+        height: 36px
+        font-size: 22px
+        line-height: 31px
+        font-weight: normal
+        &:after
+          content: "Short List"
+          font-size: 10px
+          position: absolute
+          bottom: -7px
+          left: 0
+          right: 0
+          font-style: normal
+          text-transform: none
+          color: #fff
+    &:first-child a i:after
+      content: "Quick Search"
+    &:last-child a i:after
+      content: "Delete List"
+
+/* ----------------------------------------------------------------------
+/*	ie 8 fixes
+ */* ----------------------------------------------------------------------
+
+.ctAccordion.skin-color li
+  -webkit-box-sizing: border-box
+  /* webkit
+  -khtml-box-sizing: border-box
+  /* konqueror
+  -moz-box-sizing: border-box
+  /* firefox
+  box-sizing: border-box
+  /* css3
+  li
+    -webkit-box-sizing: border-box
+    /* webkit
+    -khtml-box-sizing: border-box
+    /* konqueror
+    -moz-box-sizing: border-box
+    /* firefox
+    box-sizing: border-box
+    /* css3
+
+/* ----------------------------------------------------------------------
+/*	demo css (has no practical use but the demo)
+ */* ----------------------------------------------------------------------
+
+.container-fluid
+  &.demo p
+    margin-bottom: 30px
+  &.demo-widgets .qbox
+    min-height: 350px !important
+    padding-bottom: 20px
+
+.demo .row-fluid .span3
+  margin-bottom: 30px
+
+.container-fluid.demo-widgets .qbox.accord-menu
+  padding-bottom: 0px
+  min-height: 370px !important
+  .ctAccordion.skin-color > li:last-child
+    border-width: 3px
+
+.the-icons
+  margin: 0 0 40px
+  list-style: none
+  li
+    i
+      font-size: 20px
+    line-height: 20px
+    padding: 5px 0
+  &.orange li i
+    color: #DB5800
+
+/* ----------------------------------------------------------------------
+/*	Responsive adjustments
+ */* ----------------------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 979px)
+  body
+    background: url('../img/pattern/low_contrast_linen.png')
+  h1, h2
+    font-size: 20px
+  .body-text
+    padding: 15px 10px 10px
+    background: url('../img/pattern/fabric_plaid.png')
+    border-left: 1px solid #fafafa
+    border-right: 1px solid #fafafa
+  #logo
+    margin-left: 10px
+    background-size: 230px auto
+    height: 70px
+    background-position: 7px 10px
+    margin-left: 2px
+  #secondary-logo
+    background-size: 60% auto
+    margin-right: 10px
+  #call-phone
+    margin-right: 10px
+    bottom: 0px
+    right: 5px
+    font-size: 19px
+    display: block
+    text-align: left
+  footer
+    padding: 0
+    > .container-fluid
+      padding: 0 10px
+
+@media (max-width: 767px)
+  #secondary-logo, #call-phone
+    margin-right: 10px
+  #logo
+    margin-left: 10px
+  footer .contact-info
+    margin: 10px 0 45px !important
+
+@media (max-width: 480px)
+  body
+    background: url('../img/pattern/low_contrast_linen.png')
+  .body-text
+    padding: 15px 10px 10px
+    background: url('../img/pattern/fabric_plaid.png')
+    border-left: 1px solid #fafafa
+    border-right: 1px solid #fafafa
+  h1, h2
+    font-size: 17px
+  .listing-js #google-map-js
+    margin-top: -5px
+  #logo
+    background-size: 230px auto
+    height: 70px
+    background-position: 7px 10px
+    margin-left: 2px
+  #secondary-logo
+    background-size: 60% auto
+    margin-right: 10px
+  #call-phone
+    bottom: -65px
+    left: 20px
+    color: #555454
+    font-size: 15px
+    width: 120px
+    display: block
+    text-align: left
+  .row-fluid.appartment-listing > .span6
+    padding-bottom: 10px
+    padding-top: 10px
+  .listing-js .container-fluid
+    margin: 0
+    img
+      margin-top: 20px
+  footer
+    padding: 0px 10px 0
+
+@media only screen and (min-width: 320px) and (max-width: 479px)
+  .listing-js .container-fluid img
+    width: 273px
+  .body-text
+    padding: 15px 10px 10px
+    background: url('../img/pattern/fabric_plaid.png')
+    border-left: 1px solid #fafafa
+    border-right: 1px solid #fafafa
+  h1, h2
+    font-size: 19px
+  body
+    background: url('../img/pattern/low_contrast_linen.png')
+  #logo
+    background-size: 180px auto
+    height: 60px
+    background-position: 7px 10px
+    margin-left: 2px
+  #secondary-logo
+    background-size: 40% auto
+    margin-right: 10px
+  #call-phone
+    bottom: -65px
+    left: 20px
+    color: #555454
+    font-size: 15px
+    width: 120px
+    display: block
+    text-align: left
+  .row-fluid.appartment-listing > .span6
+    padding-bottom: 10px
+    padding-top: 10px
+  .listing-js .container-fluid
+    margin: 0
+    img
+      margin-top: 20px
+  footer
+    padding: 0px 10px 0
+  .sticker
+    top: 16px
+  .gallery .sticker, .thumbnail .sticker
+    top: -4px
+  ul.social-network
+    text-align: center
+    margin: 5px 0 0
+
+@media (max-width: 979px)
+
+@media (min-width: 980px)
