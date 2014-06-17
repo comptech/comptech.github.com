@@ -1,0 +1,12 @@
+VERSION: 4
+COMMENT: Krypton FCC (EOS from Polian et al, 1989, fitted by Shen with BM EOS assuming lo=2.97 g/cm^3)
+K0:       3.78
+K0P:       5.71
+SYMMETRY: CUBIC
+A:      5.722
+ALPHAT:      0.000000
+DIHKL:   3.304     100.    1.00    1.00    1.00
+DIHKL:   2.861      40.    2.00    0.00    0.00
+DIHKL:   2.023      25.    2.00    2.00    0.00
+DIHKL:   1.725      30.    3.00    1.00    1.00
+DIHKL:   1.651      12.    2.00    2.00    2.00

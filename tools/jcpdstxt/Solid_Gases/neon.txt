@@ -1,0 +1,12 @@
+VERSION: 4
+COMMENT: Neon FCC (equation of state of Hemley et al, PRB, 39, 1989)
+K0:       1.097
+K0P:       9.23
+SYMMETRY: CUBIC
+A:      4.324
+ALPHAT:      0.000000
+DIHKL:   2.5762    100.    1.00    1.00    1.00
+DIHKL:   2.2311     40.    2.00    0.00    0.00
+DIHKL:   1.5776     25.    2.00    2.00    0.00
+DIHKL:   1.3454     30.    3.00    1.00    1.00
+DIHKL:   1.2881     12.    2.00    2.00    2.00

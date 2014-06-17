@@ -1,0 +1,19 @@
+VERSION: 4
+COMMENT: Cobalt FCC (JCPDS 15-806, EOS from ?)
+K0:       177.000
+K0P:       4.00000
+K0PP:     0.0000
+K0T:      0.0000
+K0TT:     0.0000
+SYMMETRY: CUBIC
+A:       3.5447
+VOLUME:        44.5388
+ALPHAT:      00.00E0
+A0:      00.00E0
+A1:      00.00E0
+A2:      0.00
+DIHKL:  2.0467  100.  1  1  1
+DIHKL:  1.7723   40.  2  0  0
+DIHKL:  1.2532   25.  2  2  0
+DIHKL:  1.0688   30.  3  1  1
+DIHKL:  1.0233   12.  2  2  2

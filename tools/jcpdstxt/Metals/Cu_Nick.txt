@@ -1,0 +1,16 @@
+VERSION: 4
+COMMENT: Copper FCC (JCPDS 04-0836; Eos Holzapfel)
+K0:       121.600
+K0P:       5.58300
+SYMMETRY: CUBIC
+A:       3.615
+VOLUME:        47.2416
+ALPHAT:      00.00E0
+DIHKL:  2.0880  100.  1  1  1
+DIHKL:  1.8080   46.  2  0  0
+DIHKL:  1.2780   20.  2  2  0
+DIHKL:  1.0900   17.  3  1  1
+DIHKL:  1.0436    5.  2  2  2
+DIHKL:  0.9038    3.  4  0  0
+DIHKL:  0.8293    9.  3  3  1
+DIHKL:  0.8083    8.  4  2  0

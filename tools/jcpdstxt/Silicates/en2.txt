@@ -1,0 +1,14 @@
+VERSION: 4
+COMMENT: epsilon Nitrogen (eos from fit to Olijnk's data)
+K0:       1.028
+K0P:       8.386
+SYMMETRY: HEXAGONAL
+A:       10.027
+C:       14.057
+ALPHAT:      0.000000
+DIHKL:   3.693   45    2.0   0.0   2.0
+DIHKL:   3.423   72    1.0   1.0   3.0
+DIHKL:   3.257   32    1.0   0.0   4.0
+DIHKL:   3.196   100   2.0   1.0   1.0
+DIHKL:   2.973   98    1.0   2.0   2.0
+DIHKL:   2.731   22    0.0   2.0   4.0

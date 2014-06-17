@@ -43,6 +43,11 @@ nav, section {
     display: block
 }
 
+article {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 audio, canvas, video {
     display: inline-block;
     *display: inline;

@@ -33,6 +33,16 @@
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="../theme/css/comptech.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../theme/css/custom.css" media="screen">
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40018589-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
     </head>
     <body>
         <header>
@@ -73,16 +83,297 @@
             <div class="body-text">
                 <div class="container-fluid">
                     <div class="row-fluid">
+                        <article>
 <div class="row-fluid">
     <h1><a href="../facilities/herix.html"> Tutorial for Single crystal HERIX measurements  </a></h1>
-    <h2>Introduction</h2>
-<p>To be added.</p>
-<h2>Instruments</h2>
-<p>To be added.</p>
-<h2>Procedures</h2>
-<h3>Alignment</h3>
-<p>To be added</p>
+    <p><strong>GETTING ORIENTATION MATRIX FOR SINGLE CRYSTALS USING GSA-ADA </strong></p>
+<p><strong>Ver. 1</strong></p>
+<p><strong>October 2013</strong></p>
+<h2>1. Introduction:</h2>
+<p>This manual describes a procedure for finding orientation matrix (UB
+matrix) for single crystal.  Data is collected from Perkin Elmer (PE)
+flat panel 2D detector.   PE detector control can be opened by clicking
+“<em>_epics<strong>” icon that runs the </strong>epics</em>* as well.  GSA-ADA is
+witten in IDL code.</p>
+<p>There are three stages for obtaining UB matrix:</p>
+<ul>
+<li>Collecting data usi_DC units,,</li>
+<li>Analyzing  data wih GSA-ADA</li>
+<li>Extracting orientation matrix by RSV utility.</li>
+</ul>
+<h2>1. Collecting data:</h2>
+<ul>
+<li>First open IDL 6.4 version.  GSA-ADA and its utilities works with
+    version and not with version 8.0.</li>
+<li>Sele_DC.prj under <strong>FileRecent
+    ProectsC:3_DC.prj</strong>.</li>
+<li>Compile al files under <strong>ProjectCompileAll Files</strong>twice.</li>
+<li>And run project under <strong>Project Run</strong>.  This will bring two new
+    windows _DC and CCD Image**).</li>
+<li>_DC winow, by clicking “<strong>EPICS Config</strong>” on the upper right
+   corner connect to EPICS configuration for controlling and recording
+    motor positions.  </li>
+<li>It brings another window named <strong>EPICS Configuration</strong>.  If the
+    motor names have not been changed, there is nothing to do for the
+    fields.  Make sure motor names are correct.  Then click
+    <strong>“CONNECT”</strong> bottom on the lower side.</li>
+<li>Program will be ready when <strong>EPICS Configuration</strong> window closes
+    itself and shows <strong>Connected</strong><strong>message in the </strong>EPICS
+    Connection<strong>field in the main_DC</strong> window.  This might take
+    up to a mi
+Program collects data from defined positions of the translational stages
+and one can define up to five different samples placed on the stage. 
+Depending on how many samples you have, one can enter those positions by
+moving XYZ translational stages to specific sample.</li>
+</ul>
+<p>Currently Kohzu X (m50), Kohzu Y (m51) and Kohzu Z (m52) set as sample
+translational sta
+-   Click on <strong>“define”</strong> bottom.  It will read the position of the
+    sample X, Y, Z .
+-   To collect data from this sample position, check the field says
+    <strong>“collect”</strong>.
+-   Collection of the data is done by rotating Phi circle. </p>
+<p>In order to do this, check and write the range of rotation you would
+like to do in the fields.  It is given as <strong>start</strong> (at -15 degree),
+<strong>total range</strong>(30 degree), <strong>number of steps</strong> (30) and <strong>exp. Time per
+deg.</strong> (1 sec).  </p>
+<p>This will do phi rotation of -15 to +15 degree in 30 steps with 1 sec
+exposure time and it will only take about 30 seconds.</p>
+<ul>
+<li>Also define name and directory where the files will be saved.  This
+    can be done  by selecting directory name in field on the top left
+    side called <strong>“NTFS dir”</strong>.  WriteUs_AUG13” and
+    “sample name” li_D1.  Define star #” like
+    001.*</li>
+<li>Finally check <strong>‘start Exposure”</strong>to collect data. <strong><em>Make sure to
+    open station shutter before collecting data.  Currently it is not
+    connected to shutters</em></strong>. Program moves the motor to position.  For
+    this starts speed of zero.  Then motor moves ahead of the position
+    (like to -15.5).  Then starts recording at -15 degree.  <strong><em>NOW Data
+    is collected.</em></strong></li>
+</ul>
+<p>One can make sure whether data is collected or not by going into
+directory where data is saved.</p>
+<p>Once data is collected, we will move to next step by using one of the
+two programs (GSA-ADA and RSV) fi</p>
+<h2>2. Analyzing data with GSA-ADA:</h2>
+<ul>
+<li>One can open this program by clicking <strong>GSA-ADA.sav </strong> file that is
+    in the folder in desktop.</li>
+<li>It popups a new window named <strong>“Image format and size”</strong> where we
+    define the image format.  For PE detector, it <strong>TIFF an size
+    1024x1024 pixel</strong>.  Therefore select <strong>“Tiff”</strong>and correct size
+    here.  Then, hit <strong>“start”</strong>.</li>
+<li>It opens another window named <strong>“GSA-ADA.ver1.6 September 7 2012”</strong>.</li>
+<li>In this program, open one of the file in the directory where data
+    collected by selecting <strong>FileOpen</strong>.  </li>
+</ul>
+<p>Check the orientation of the image by looking at the beam stop shadow
+where it is pointing. </p>
+<p>Image at 3ID-C PE detector is 90 degree rotated to reference and beam
+stop should be seen in the horizontal plane pointing right to left.  </p>
+<p>In reality it should point vertical from bottom to top.</p>
+<ul>
+<li>For 3ID-C PE detector select <strong>“Invert X, Invert Y, and Transpose”</strong>
+    all three on the upper right side of the window to bring orientation
+    to what GSE-ADA can process (that is beam stop from pointing down)</li>
+<li>Then reopen one of the images again.  Now one can sees that beam
+    stop shadow is rotated vertically and shown from bottom. </li>
+<li>Then go to <strong>“SCAN”</strong>in the menu bar and click <strong>“Merge step
+    images”</strong> bottom on the lower right side.  Program goes through all
+    images to merge them.</li>
+<li>One can change the range of colors for easy view of weak peaks say
+    from 100010000.</li>
+<li>At this point, one should make sure that proper calibration values
+    are obtained and ready for use.  </li>
+</ul>
+<p>This is under main menu named <strong>“Calibration”.</strong>  Calibration files are
+created by diffraction image from standard CeO2 powder.  This data
+should be taken before the sample images or usually there should be
+calibration file named <strong>“cal.cal”</strong> already taken before.  </p>
+<p>Unless detector position did not changed or detector is not removed,
+this will not change and one can use this file.  </p>
+<p>One can open this file under <strong>“Calibration”, Open and opening correct
+xxx.cal file.  </strong></p>
+<p>One can check calibration and so on by selecting <strong>“Show rings”</strong> in the
+lower right side of the window.  </p>
+<p>After this action, calibration rings will be overlaid on the image.  </p>
+<p>Check whether everything is fine, If there is a problem like same set of
+two theta points show themselves on the opposite side of the CeO2
+rings.  Then just do the calibration again.</p>
+<p><strong>Creating Calibration file using standard powder sample,</strong></p>
+<ul>
+<li>Go to <strong>FileOpen</strong>and find calibration file.</li>
+<li>Change signal to noise ratio to smaller number.  This is the field
+    under <strong>“TEST”</strong> button on the lower right side of the
+    <strong>“Calibration”</strong> window (like to value 1.1)</li>
+<li>Then check <strong>“Refine cal”</strong> next to <strong>“TEST”</strong> button.  It takes
+    about 30 second.  After it is done, it gives result with standard
+    deviations.  Check this result,  If it is okay,</li>
+<li>Then save the calibration file as ”xxx<strong>.cal”</strong> file.</li>
+</ul>
+<p>Open again one of the collected data and merge again.  Verify
+calibration as well.</p>
+<p><strong>Peak search,</strong></p>
+<ul>
+<li>Select <strong>“SEARCH”</strong> window next to File menu for peak search in the
+    image.  </li>
+</ul>
+<p>Even though, one can select diffraction peaks by hand, <strong>GSA-ADA</strong>
+program can find diffraction peaks automatically.  This can be done by</p>
+<ul>
+<li>Clicking “<strong>PS button”.</strong>Make sure output directory is same as the
+    directory that you read the images.  </li>
+</ul>
+<p>By clicking <strong>PS</strong> button, program starts searching merged image file
+and shows progress in new pop up window. </p>
+<p>If program returns with results that are not realistic like many more
+boxes than the existing peaks or half of the screen is full with boxes
+but the other half is empty vs., change <strong>Threshold (say 1.051.1. </strong>  </p>
+<ul>
+<li>Then go to <strong>“PEAKS”</strong> window and click <strong>“CLEAR”</strong> button.</li>
+<li>Later go back to <strong>“SEARCH”</strong> window and change <strong>“minI” from 10 to
+    100 and “PS search”</strong> again.  Remember Threshold and min I important
+    values to change.  </li>
+<li>At the end, program finds most of the peaks.  Some might not be
+    found or some of them might be wrong.  </li>
+</ul>
+<p>In the program, there is an option to add or remove peaks manually. </p>
+<p>In order to use this feature, drag mouse in to image and perform right
+click.  It will bring drop menu and select <strong>“ADD peak”</strong>.<strong> </strong></p>
+<p>Unfortunately, one can add one peak at a time.  </p>
+<p>Then drag mouse over the peak.  Peak will be highlighted by a box.  </p>
+<p>Perform this until you add all the peaks.  </p>
+<p>One can also remove unwanted peaks in the program by clicking right
+mouse and selecting <strong>“Select”</strong>. </p>
+<p>Then select the boxes that are going to be removed with clicking left
+mouse and dragging mouse over the boxes/region and clicking left mouse
+again.  </p>
+<p>In this way, one selects the unwanted peaks for removing purposes.  </p>
+<p>Then click <strong>“DELETE”</strong> button on the right top side of the <strong>PEAK</strong>
+menu. </p>
+<p>You can turn of selection by clicking right mouse in the image window by
+selecting <strong>“SELECTION OFF”</strong>.  Note, this peak search routine creates a
+file named <strong>“a.pks”</strong> after performing search.</p>
+<ul>
+<li>Now peak selection is done and ready for fitting.  </li>
+</ul>
+<p>Before performing fitting, one can check the diffraction peaks and
+selection of boxes around these peaks for the last time. </p>
+<p>Fitting is done in boxes and box size is measured in pixels. </p>
+<p>The number in the field <strong>“box”</strong> is radius of the box.  Change box size
+<strong>from 20 to 10</strong> since 20 is too big (box size 10 means, box is chosen
+10 pixels on the left and right side).  </p>
+<p>Click <strong>“Change size”</strong> just underneath.  </p>
+<p>There are for windows with three of them are in black color and one of
+them (lower right corner) has information regarding peaks.  </p>
+<p>One can check the individual peaks by selecting one of them and
+scrolling down of each.  </p>
+<p>These three windows show the magnified image of the diffraction peaks
+and once scrolled, main image window shows selected peak box with green
+color.  </p>
+<p>Therefore, one can check the quality of the peak this way.  </p>
+<p>Keep scrolling to different peaks; if diffraction is just one pixel, you
+can delete it by clicking <strong>“delete”</strong> on the top left side in
+<strong>PEAK</strong>menu.  Also if it gives some error message remove that point as
+well.  </p>
+<p>After surveying and removing unwanted peaks, then save file into same
+file by clicking to <strong>”SAVE”</strong> and this will popup save window.  Save to
+same file as named <strong>“a.pks”.</strong></p>
+<ul>
+<li>Now, we have pixel coordinate of the peaks we find and we need to
+    know the angles at which the peak had max intensity.  Therefore,
+    this is one of the important steps.  </li>
+</ul>
+<p>For this step, go to <strong>“SCAN”</strong> window and tell the program how the scan
+was done.  </p>
+<p>We did our scan <strong>“START” at -15 degree with “STEP” of 1.</strong> </p>
+<p>(When we open the first image at the beginning, the program already
+found out that we have”<strong>number Images” 30</strong> with <strong>“Start no” 1.)</strong></p>
+<p>After checking all these fields, make sure everything is okay, then
+click <strong>“COMPUT&gt; FROM SCAN”</strong> button.  
+This opens the images in sequence of how intensity varied.  </p>
+<p>It gives message that profile computation is successfully completed.  </p>
+<p>When it is done program gives output (that is in the <strong>peak</strong> menu) of
+angles in the column last to second. </p>
+<p>After we finished analyzing steps, we have to save the file again in
+<strong>a.pks</strong> file.</p>
+<h2>3. Extracting orientation matrix by RSV utility.</h2>
+<p>Now that we determine the pixel coordinate of the peak as well as the
+angles associated with those peaks, we are ready for calculating and
+refining the lattice parameters and orientation matrix of the single
+crystal.</p>
+<p>For this, we will use second program called <strong>RSV.</strong>
+-   Open <strong>a.pks</strong>file under <strong>FILE Open. </strong>
+-   In the view window, program shows the projection of the reciprocal
+    space along the x-ray direction of the each of the diffraction peaks
+    that we used. We can change the scaling and rotation of the viewing
+    angle to investigate the profile.
+-   This rotation can be done by selecting <strong>“HAND ROTATION”</strong>. </p>
+<p>It rotates the reciprocal space image around and one can look for how
+these diffraction points are aligned along a line.  </p>
+<p>In good fitting diffraction points should perfectly align to lines.</p>
+<p>Then we should be able to index it.  </p>
+<ul>
+<li>Next go to <strong>“INDEX”</strong> and <strong>“TRANSFORM”</strong> .  </li>
+</ul>
+<p>There is an external program called <strong>“CELLNOW”</strong>.  Click this and it
+says current peak table has been saved in the file named <strong>“xxx.php”</strong>. 
+Say OK.</p>
+<p>This the way it passes the information to <strong>cellnow</strong>. Save it in an
+input file that has extension <strong>.p4p</strong>  </p>
+<p>Pops up new window.</p>
+<ul>
+<li>First thing <strong>CELLNOW</strong> ask in <strong>cell-now.exe</strong> window is the name
+    of the file type <strong>xxx.p4p</strong></li>
+<li>Then, it asks some questions, hit enter until program ask <strong>min and
+    max values allowed cell edges.  2-10 is fine.  Hit enter again.</strong></li>
+<li>CELLNOW program comes with possible solutions.  Select the solution
+    that you want.</li>
+<li>Then it asks a name for output file like <strong>“1.p4p”. </strong>The default
+    directory for this file i_m** </li>
+<li>
+<p>You can read this calcultd orientation matrix in the main program
+    by going to <strong>“INDEX””FILE” and click on “READ from p4p” in the
+    directory specif_m1.p4p</strong> .  
+After we open this file, program displays the lattice parameters that
+contain the file.</p>
+</li>
+<li>
+<p>There is a button named <strong>“SELECT w/UB”</strong>, if we click it, we can
+    see colors of each point changes.</p>
+</li>
+</ul>
+<p>Calculated values are off from integer number about 0.1, it is selected
+with darker color and not indexable.</p>
+<p>Go to <strong>View and click Delete selected</strong> to remove them.</p>
+<ul>
+<li>Go to <strong>REFINE</strong>and impose the symmetry constrain like tetragonal.</li>
+<li>Then click <strong>REFINE w/d space</strong> and it shows <strong>hkl values.</strong></li>
+<li>One can check under <strong>FILTER</strong> distributions of error for difference
+    of d-spacing calculated for each peak from the hkl orientation
+    matrix versus what was measured.  Some of the outliers might be
+    big. </li>
+</ul>
+<p>We have orientation matrix that we should share.</p>
+<ul>
+<li>Under <strong>INDEX FILE, SAVE in UB format</strong> called **amb.U</li>
+<li>Go back to <strong>GSE-ADA</strong> program and <strong>PREDICTSIMULATE</strong> opens new
+    window called diffraction image <strong>simulation/ manual. Indexing</strong> </li>
+<li>Lets merge the image again to see all the peaks under <strong>SCANMERGE
+    STEP Image.</strong> </li>
+<li>Then in extra window, click <strong>OPEN and and open “amb.UB” file</strong></li>
+<li>There is an opening angle of DAC (select this angle, if no DAC use
+    say 180 degree)</li>
+<li>Then click <strong>“GENERATE”</strong>should calculate where peaks should be.</li>
+<li>In program, there is a virtual goniometer that one can simulate what
+    will happen or how much Chi angle should be ratated to bring desired
+    peak to horizontal axis so on.</li>
+</ul>
+<p>Select <strong>Chi angle in say 5degree step and then click chi.</strong>  This might
+be very useful tool to see.</p>
 </div>
+                        </article>
                     </div>
                 </div>
             </div>

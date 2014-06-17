@@ -1,0 +1,41 @@
+VERSION: 4
+COMMENT: MgGeO3_ilmenite structure(JCPDS220705,EOS guess)
+K0:       218.000
+K0P:       7.00000
+SYMMETRY: HEXAGONAL
+A:       4.936
+C:       13.76
+ALPHAT:      0.000000
+DIHKL:   4.5500     70.       0       0       3
+DIHKL:   4.0700     40.       1       0       1
+DIHKL:   3.6200     50.       1       0       2
+DIHKL:   2.6700     90.       1       0       4
+DIHKL:   2.4600     80.       1       1       0
+DIHKL:   2.1700     80.       1       1       3
+DIHKL:   1.8090     40.       2       0       4
+DIHKL:   1.7750     10.       1       0       7
+DIHKL:   1.6730    100.       1       1       6
+DIHKL:   1.5700     10.       2       1       2
+DIHKL:   1.4570     40.       2       1       4
+DIHKL:   1.4210     50.       3       0       1
+DIHKL:   1.3570     10.       3       0       3
+DIHKL:   1.3060     20.       1       0      10
+DIHKL:   1.2950     20.       1       1       9
+DIHKL:   1.2450     10.       2       0       9
+DIHKL:   1.2310     10.       2       2       1
+DIHKL:   1.2080     10.       3       0       6
+DIHKL:   1.1890     10.       2       2       3
+DIHKL:   1.1780     10.       2       1       8
+DIHKL:   1.1660     10.       3       1       2
+DIHKL:   1.1540     10.       3       0       7
+DIHKL:   1.1200     10.       3       1       4
+DIHKL:   1.0860     20.       2       2       6
+DIHKL:   1.0460     20.       2       2       7
+DIHKL:   1.0260     10.       1       0      13
+DIHKL:   1.0200     10.       4       0       4
+DIHKL:   0.9599     10.       2       2       9
+DIHKL:   0.9567     10.       1       0      14
+DIHKL:   0.9477     10.       2       0      13
+DIHKL:   0.9430     20.       3       2       4
+DIHKL:   0.9329     20.       4       1       0
+DIHKL:   0.9141     20.       4       1       3

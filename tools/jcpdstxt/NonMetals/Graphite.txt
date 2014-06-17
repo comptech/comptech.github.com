@@ -1,0 +1,19 @@
+VERSION: 4
+COMMENT: Graphite
+K0:       100.000
+K0P:       4.00000
+SYMMETRY: HEXAGONAL
+A:       2.456
+C:       6.696
+VOLUME:        34.9786
+ALPHAT:      00.00E0
+DIHKL:  3.3480  100.  0  0  2
+DIHKL:  2.1270    3.  1  0  0
+DIHKL:  2.0271   17.  1  0  1
+DIHKL:  1.7953    3.  1  0  2
+DIHKL:  1.6740    7.  0  0  4
+DIHKL:  1.5398    5.  1  0  3
+DIHKL:  1.2280    2.  1  1  0
+DIHKL:  1.1529    3.  1  1  2
+DIHKL:  1.1333    2.  1  0  5
+DIHKL:  1.1160    2.  0  0  6
