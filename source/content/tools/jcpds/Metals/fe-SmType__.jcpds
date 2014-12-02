@@ -1,0 +1,18 @@
+VERSION: 4
+COMMENT: Iron Sm type structure(Shen's Calculation)
+K0:       165.000
+K0P:       5.33000
+SYMMETRY: HEXAGONAL
+A:       2.51600
+C:       9.0576
+ALPHAT:      0.000000
+DIHKL:   2.1789     8.     1.00    0.00    0.00
+DIHKL:   2.1185     36.    1.00    0.00    1.00
+DIHKL:   1.9635     66.    1.00    0.00    2.00
+DIHKL:   1.8115     31.    0.00    0.00    5.00
+DIHKL:   1.7669     61.    1.00    0.00    3.00
+DIHKL:   1.5701      6.    1.00    0.00    4.00
+DIHKL:   1.3930      2.    1.00    0.00    5.00
+DIHKL:   1.2580      8.    1.00    1.00    0.00
+DIHKL:   1.2409      2.    1.00    0.00    6.00
+DIHKL:   1.1126      4.    1.00    0.00    7.00

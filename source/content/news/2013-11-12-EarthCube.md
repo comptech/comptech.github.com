@@ -1,0 +1,4 @@
+title: EarthCube workshop
+date: 2013-11-12
+
+Drs. Przemyslaw Dera and Bin Chen attended the [EarthCube workshop](http://www.energy.psu.edu/EarthCUBE/) on November 12-14, 2013 in Alexadria, VA. The 2.5-day workshop addressed the current state and future directions of cyberinfrastructure development in support of rock deformation and high pressure mineral physics research via the COMPRES and the DEFORM communitiies. The central goals of the workshop were to facilitate scientific discovery via cyberinfrastructure development and to identify EarthCube activities that promote research in high-pressure mineral physics and rock deformation.
